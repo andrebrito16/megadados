@@ -18,7 +18,7 @@ jobs:
     steps:
       - name: generate svg with grades
         uses: andrebrito16/iac-svg-generator/svg-only@main
-        with:
+        env:
           IAC_TOKEN: ${{ secrets.IAC_TOKEN }}
       # push the content of <build_dir> to a branch
       # the content will be available at https://raw.githubusercontent.com/<github_user>/<repository>/<target_branch>/<file> , or as github page
