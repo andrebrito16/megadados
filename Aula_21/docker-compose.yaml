@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  spark:
+    image: jupyter/pyspark-notebook
+    ports:
+      - "8888:8888" # Expose Jupyter
+      - "4040:4040" # Expose Spark UI
+    volumes:
+      - ./notebooks:/home/jovyan/work # Mount a local directory for notebooks
+    environment:
+      - JUPYTER_ENABLE_LAB=yes
+    command: start-notebook.sh --NotebookApp.token='' --NotebookApp.password=''
